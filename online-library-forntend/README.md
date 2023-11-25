@@ -47,6 +47,7 @@
 - Enable users to preview excerpts, reviews, and other details about a book-movie before deciding to borrow it. This helps users make informed decisions about their reading-watching choices.
 
 ## Home Page
+![slider](./home-page-slider.png)
 
 ### Slider
 
