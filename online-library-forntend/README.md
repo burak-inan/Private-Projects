@@ -49,22 +49,22 @@
 ## Home Page
 
 ### Slider
-![slider](./home-page-slider.png)
+![slider](./images/home-page-slider.png)
 
 ### Popular Resources
-![popular-resources](./home-page-popular-resources.png)
+![popular-resources](./images/home-page-popular-resources.png)
 
 ### Footer
-![footer](./home-page-footer.png)
+![footer](./images/home-page-footer.png)
 
 ## Books - Movies Page
-![books-movies-pages](./resources-page.png)
+![books-movies-pages](./images/resources-page.png)
 
 ## About Page
-![about-page](./about-page.png)
+![about-page](./images/about-page.png)
 
 ## Contact Page
-![contact-page](./contact-page.png)
+![contact-page](./images/contact-page.png)
 
 ## Dashboard Page
-![dashboard-page](./dashboard-page.png)
+![dashboard-page](./images/dashboard-page.png)

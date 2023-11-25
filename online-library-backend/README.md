@@ -45,26 +45,3 @@
 
 ### Responsive Book-Movie Previews: 
 - Enable users to preview excerpts, reviews, and other details about a book-movie before deciding to borrow it. This helps users make informed decisions about their reading-watching choices.
-
-## Home Page
-
-### Slider
-![slider](./home-page-slider.png)
-
-### Popular Resources
-![popular-resources](./home-page-popular-resources.png)
-
-### Footer
-![footer](./home-page-footer.png)
-
-## Books - Movies Page
-![books-movies-pages](./resources-page.png)
-
-## About Page
-![about-page](./about-page.png)
-
-## Contact Page
-![contact-page](./contact-page.png)
-
-## Dashboard Page
-![dashboard-page](./dashboard-page.png)
