@@ -1,4 +1,10 @@
 # RWU Online Library
+
+**Author:**  
+_Burak Inan_   
+_burakinan.dev@gmail.com_
+---
+
 The Library Management System is a Spring Boot application developed using a functional programming style. It provides a RESTful API for managing books, members, and borrowing transactions in a library. The project uses PostgreSQL as the backend database.
 It checks the database every day thanks to a scheduled method. Marks the top 10% of the most rented resources in the last 30 days as popular. It also takes back expired resources from members.
 
@@ -10,11 +16,6 @@ It checks the database every day thanks to a scheduled method. Marks the top 10%
 - PostgreSQL
 - Swagger API
 - Docker
-
-## bash
-### Copy code
-- ./mvnw spring-boot:run
-- The application should now be running at http://localhost:8440.
 
 
 ## API Documentation
