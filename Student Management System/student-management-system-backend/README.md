@@ -1,93 +1,177 @@
-# online-library-backend
+# student-management-system-backend-project
+
+**Author:**  
+_Burak Inan_   
+_burakinan.dev@gmail.com_
+---
+
+## Description:
+* The Student Management System is a backend project built with Java and Spring technologies. It provides a comprehensive set of RESTful APIs for managing various entities within an educational institution. The system includes functionalities for administrators, advisory teachers, authentication, communication messages, deans, education terms, lessons, lesson programs, meetings, students, student info, teachers, and vice deans.
+
+## Key Features:
+
+* Authentication and Authorization (Admin, Manager, Assistant Manager, Teacher, Student roles)
+* CRUD operations for Admins, Advisory Teachers, Deans, Education Terms, Lessons, Lesson Programs, Meetings, Students, Teachers, and Vice Deans
+* Communication Messages for system-wide communication
+* Term and Final Grades Process with specific rules for course selection and grade calculations
+
+## Technologies Used
+- Java 11
+- Spring Boot
+- Spring Data JPA
+- Spring Security (Jwt token)
+- PostgreSQL
+- Swagger API
+- Docker
 
 
+## API Documentation
+The Student Management System provides the following RESTful APIs:
 
-## Getting started
+### Swagger UI:
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+http://localhost:8080/swagger-ui.html
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### Using the Admin Service,
+You have to be an admin to perform an operation
 
-## Add your files
+* Using the  [localhost:8080/admin/save](localhost:8080/admin/save) , you can save admin 
+* Using the  [localhost:8080/admin/getAll?email=test@test.com&page=0&size=10&sort="date"&type="desc"](localhost:8080/admin/getAll?email=test@test.com&page=0&size=10&sort="date"&type="desc") , you can get all admin by page 
+* Using the  [localhost:8080/admin/delete/{id}](localhost:8080/admin/delete/{id}) , you can delete an admin by id, except built_in admins 
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Using the Advisory Teacher Service,
+You have to be an admin, manager or assistant manager to perform an operation
+* Using the  [localhost:8080/advisorTeacher/getAll](localhost:8080/advisorTeacher/getAll) , you get all Advisory Teacher by list 
+* Using the  [localhost:8080/advisorTeacher/search?email=test@test.com&page=0&size=10&sort="date"&type="desc"](localhost:8080/advisorTeacher/search?email=test@test.com&page=0&size=10&sort="date"&type="desc") , you can get all Advisory Teacher by page 
+* Using the  [localhost:8080/advisorTeacher/delete/{id}](localhost:8080/advisorTeacher/delete/{id}) , you can delete an Advisory Teacher by id, except built_in admins
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/rwu-online-library/online-library-backend.git
-git branch -M main
-git push -uf origin main
-```
+### Using the Auth Service,
+* Using the  [localhost:8080/auth/login](localhost:8080/auth/login) , you can log in by password and username 
 
-## Integrate with your tools
+### Using the Communication Message Service,
+Anyone can send messages to the system and admin also can list all message by email or subject.  
+You can send only a message in a day with same email
 
-- [ ] [Set up project integrations](https://gitlab.com/rwu-online-library/online-library-backend/-/settings/integrations)
+* Using the  [localhost:8080/contactMessages/save](localhost:8080/contactMessages/save) , you can send messages without register 
 
-## Collaborate with your team
+If you are an admin, manager or assistant manager you can perform below operations
+* Using the  [localhost:8080/contactMessages/getAll?page=0&size=10&sort="date"&type="desc"](localhost:8080/contactMessages/getAllByPage?page=0&size=10&sort="date"&type="desc") , If you are an admin, manager or assistant manager you can see all messages by page.
+* Using the  [localhost:8080/contactMessages/searchByEmail?email=test@test.com&page=0&size=10&sort="date"&type="desc"](localhost:8080/contactMessages/searchByEmail?email=test@test.com&page=0&size=10&sort="date"&type="desc") ,  If you are an admin, manager or assistant manager you can see all messages by page for a specific email.
+* Using the  [localhost:8080/contactMessages/searchBySubject?subject=test@test.com&page=0&size=10&sort="date"&type="desc"](localhost:8080/contactMessages/searchBySubject?subject=test@test.com&page=0&size=10&sort="date"&type="desc") , If you are an admin, manager or assistant manager you can see all messages by page for a specific subject.
+* Using the  [localhost:8080/contactMessages/delete/{id}](localhost:8080/contactMessages/delete/{id}) , if you are admin, manager or assistant manager you can delete a message with an id 
+* Using the  [localhost:8080/contactMessages/update/{id}](localhost:8080/contactMessages/update/{id}) , if you are admin, manager or assistant manager you can update a message with an id 
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Using the Dean Service,
+You have to be an admin or manager to perform an operation
 
-## Test and Deploy
+* Using the  [localhost:8080/dean/save](localhost:8080/dean/save) , you can create a dean
+* Using the  [localhost:8080/dean/delete/{deanId}](localhost:8080/dean/delete/{deanId}) , you can delete a dean with an id
+* Using the  [localhost:8080/dean/deleteUsingParam?deanId=""](localhost:8080/dean/deleteUsingParam?deanId=""}) , you can delete a dean by using an id as request parameter 
+* Using the  [localhost:8080/dean/getManagerById/{deanId}](localhost:8080/dean/getManagerById/{deanId}) , you can get a dean by using an id as request parameter
+* Using the  [localhost:8080/dean/getManagerByIdUsingParam?deanId=""}](localhost:8080/dean/getManagerById?deanId="") , you can get a dean by an id
+* Using the  [localhost:8080/dean/getAll](localhost:8080/dean/getAll) , you can get all deans as list.
+* Using the  [localhost:8080/dean/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/dean/search?page=0&size=10&sort="date"&type="desc") , you can get all deans by page.
 
-Use the built-in continuous integration in GitLab.
+### Using the Education Term Service,
+If you are a assistant manager or teacher you can perform below operations
+* Using the  [localhost:8080/educationTerms/{id}](localhost:8080/educationTerms/{id}) , you can get an education terms by an id
+* Using the  [localhost:8080/educationTerms/getAll](localhost:8080/educationTerms/getAll) , you can get all education terms as list.
+* Using the  [localhost:8080/educationTerms/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/educationTerms/search?page=0&size=10&sort="date"&type="desc") , you can get all educationTerms by page.
+* Using the  [localhost:8080/educationTerms/delete/{id}](localhost:8080/educationTerms/delete/{id}) , you can delete an education term by an id
+* Using the  [localhost:8080/educationTerms/update/{id}](localhost:8080/educationTerms/update/{id}) , you can update an education term by an id
+* Using the  [localhost:8080/educationTerms/getAllAfterThisDate?date=""&page=0&size=10&sort="date"&type="desc"](localhost:8080/educationTerms/getAllAfterThisDate?date=""&page=0&size=10&sort="date"&type="desc"}) , you can get all education terms after the specified date by using a date as request parameter
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+If you are admin or manager you can also perform the below operation
+* Using the  [localhost:8080/educationTerms/save](localhost:8080/educationTerms/save) , you can create an education term
 
-***
+### Using the Lesson Service,
+If you are admin ,manager or assistant manager you can perform all operations
+* Using the  [localhost:8080/lessons/save](localhost:8080/lessons/save) , you can create an lessons
+* Using the  [localhost:8080/lessons/delete/{id}](localhost:8080/lessons/delete/{id}) , you can delete a lesson by an id
+* Using the  [localhost:8080/lessons/getLessonByName?lessonName=""](localhost:8080/lessons/getLessonByName?lessonName="") , you can get a lesson by using lesson name as request parameter.
+* Using the  [localhost:8080/lessons/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/lessons/search?page=0&size=10&sort="date"&type="desc") , you can get all lessons by page.
+* Using the  [localhost:8080/lessons/getAllLessonByLessonId?lessonId=""&lessonId=""](localhost:8080/lessons/getAllLessonByLessonId?lessonId=""&lessonId="") , you can all matched lessons by given id set
 
-# Editing this README
+If you are a teacher you can only perform the below operation
+* Using the  [localhost:8080/lessons/update/{id}](localhost:8080/lessons/update/{id}) , you can update a lesson by an id
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Using the Lesson Program Service,
+If you are admin ,manager or assistant manager you can perform all operations
+* Using the  [localhost:8080/lessonPrograms/save](localhost:8080/lessonPrograms/save) , you can create an lesson program
+* Using the  [localhost:8080/lessonPrograms/getAll](localhost:8080/lessonPrograms/getAll) , you can get all lesson programs as list
+* Using the  [localhost:8080/lessonPrograms/getById/{id}](localhost:8080/lessonPrograms/getById/{id}) , you can get a lesson program by an id
+* Using the  [localhost:8080/lessonPrograms/delete/{id}](localhost:8080/lessonPrograms/delete/{id}) , you can delete a lesson program by an id
 
-## Suggestions for a good README
+If you are student or teacher you can perform the below operations
+* Using the  [localhost:8080/lessonPrograms/getAllAssigned](localhost:8080/lessonPrograms/getAllAssigned) , you can get all assigned lesson programs as list
+* Using the  [localhost:8080/lessonPrograms/getAllUnassigned](localhost:8080/lessonPrograms/getAllUnassigned) , you can get all un assigned lesson programs as list
+* Using the  [localhost:8080/lessonPrograms/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/lessonPrograms/search?page=0&size=10&sort="date"&type="desc") , you can get all lesson programs by page.
+* Using the  [localhost:8080/lessonPrograms/getAllLessonProgramByTeacher](localhost:8080/lessonPrograms/getAllLessonProgramByTeacher) , you can get a lesson program of a teacher by using teacher's username as header parameter.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Using the Meet Service,
 
-## Name
-Choose a self-explaining name for your project.
+* Using the  [localhost:8080/meet/save](localhost:8080/meet/save) , if you are teacher you can create a meet by specifying teacher's username as header parameter
+* Using the  [localhost:8080/meet/getAll](localhost:8080/meet/getAll) , if you are admin you can get all meets as list
+* Using the  [localhost:8080/meet/getMeetById/{meetId}](localhost:8080/meet/getMeetById/{meetId}) , if you are admin you can get a meet by a meet id
+* Using the  [localhost:8080/meet/delete/{meetId}](localhost:8080/meet/delete/{meetId}) , if you are admin or teacher you can delete a meet by meet id
+* Using the  [localhost:8080/meet/update/{meetId}](localhost:8080/meet/update/{meetId}) , if you are admin or teacher you can update a meet by meet id
+* Using the  [localhost:8080/meet/getAllMeetByAdvisorTeacherAsList](localhost:8080/meet/getAllMeetByAdvisorTeacherAsList) , if you are teacher you can get all meets of an advisory teacher as list by providing username of advisory teacher as header paramete
+* Using the  [localhost:8080/meet/getAllMeetByStudent](localhost:8080/meet/getAllMeetByStudent) , if you are student you can get all meets of a student as list by providing username of student as header parameter
+* Using the  [localhost:8080/meet/search?page=0&size=10](localhost:8080/meet/search?page=0&size=10) , if you are admin you can get all meets by page.
+* Using the  [localhost:8080/meet/getAllMeetByAdvisorAsPage?page=0&size=10](localhost:8080/meet/getAllMeetByAdvisorAsPage?page=0&size=10) , if you are teacher you can get all meets of an advisory teacher as page by providing username of the advisory teacher as header parameter.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Using the Student Service,
+Admins can perform all operations
+If you are manager or assistant manager you can perform the below operations
+* Using the  [localhost:8080/students/save](localhost:8080/students/save) , you can save a new student
+* Using the  [localhost:8080/students/changeStatus](localhost:8080/students/changeStatus?id=""&status="") , you can set a student as active/passive by a boolean value
+* Using the  [localhost:8080/students/getAll](localhost:8080/students/getAll) , you can get all students by list
+* Using the  [localhost:8080/students/update/{id}](localhost:8080/students/update/{id}) , you can update a student by id
+* Using the  [localhost:8080/students/delete/{id}](localhost:8080/students/delete/{id}) , you can delete a student by id
+* Using the  [localhost:8080/students/getStudentByName?name=""](localhost:8080/students/getStudentByName?name="") , you can get a student by name with request parameter
+* Using the  [localhost:8080/students/search?page=0&size=10](localhost:8080/students/search?page=0&size=10) , you can get all students by page.
+* Using the  [localhost:8080/students/getStudentById?id=""](localhost:8080/students/getStudentById?id="") , you can get a student by request parameter (id)
+* Using the  [localhost:8080/students/getAllByAdvisoryId](localhost:8080/students/getAllByAdvisoryId) , you can get all students of an advisory teacher as list by providing username of advisory teacher as header parameter
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+If you are student you can only perform the below operation
+* Using the  [localhost:8080/students/chooseLesson](localhost:8080/students/chooseLesson) , you can update lessons of the student by providing username of the advisory teacher as header parameter.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Using the Student Info Service,
+* Using the  [localhost:8080/studentInfo/save](localhost:8080/studentInfo/save) , if you are a teacher you can save info of a student
+* Using the  [localhost:8080/studentInfo/delete/{studentInfoId}](localhost:8080/studentInfo/delete/{studentInfoId}) , if you are admin or teacher you can delete a student info by student info id
+* Using the  [localhost:8080/studentInfo/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/studentInfo/search?page=0&size=10&sort="date"&type="desc") , if you are admin, manager or assistant manager you can get all student infos by page.
+* Using the  [localhost:8080/studentInfo/update/{studentInfo}](localhost:8080/studentInfo/update/{studentInfo}) , if you are admin or teacher you can update a student info by student info id
+* Using the  [localhost:8080/studentInfo/getAllForTeacher?page=0&size=10](localhost:8080/studentInfo/getAllForTeacher?page=0&size=10) , if you are teacher you can get all student infos of the teacher as page by providing username of the teacher as header parameter
+* Using the  [localhost:8080/studentInfo/getAllForStudent?page=0&size=10](localhost:8080/studentInfo/getAllForStudent?page=0&size=10) , if you are student you can get all infos of the student as page by providing username of the student as header parameter
+* Using the  [localhost:8080/studentInfo/getByStudentId/{studentId}](localhost:8080/studentInfo/getByStudentId/{studentId}) , if you are admin, manager or assistant manager you can get all infos of the student as list by student Id
+* Using the  [localhost:8080/studentInfo/get/{studentInfoId}](localhost:8080/studentInfo/get/{studentInfoId}) , if you are admin, manager or assistant manager you can get the student info by student info id
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Using the Teacher Service,
+You have to be admin, manager or assistant manager to perform an operation
+* Using the  [localhost:8080/teachers/save](localhost:8080/teachers/save) , you can save a new teacher
+* Using the  [localhost:8080/teachers/getAll}](localhost:8080/teachers/delete/{studentInfoId}) , you can get all teachers by list
+* Using the  [localhost:8080/teachers/getTeacherByName?name=""}](localhost:8080/teachers/getTeacherByName?name="") , you can get all teachers by teacher name as list
+* Using the  [localhost:8080/teachers/delete/{id}](localhost:8080/teachers/delete/{id}) , you can delete a teacher by id
+* Using the  [localhost:8080/teachers/getSavedTeacherById/{id}](localhost:8080/teachers/getSavedTeacherById/{id}) , you can get the teacher by id
+* Using the  [localhost:8080/teachers/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/teachers/search?page=0&size=10&sort="date"&type="desc") , you can get all teachers infos by page.
+* Using the  [localhost:8080/teachers/update/{userId}](localhost:8080/teachers/update/{userId}) , you can update a teacher by id
+* Using the  [localhost:8080/teachers/chooseLesson](localhost:8080/teachers/chooseLesson) , you can update lessons of the teacher.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### Using the Vice Dean Service,
+You have to be admin or manager to perform an operation
+* Using the  [localhost:8080/vicedean/save](localhost:8080/vicedean/save) , you can save a new vice dean
+* Using the  [localhost:8080/vicedean/update/{id}](localhost:8080/vicedean/update/{id}) , you can update a vice dean by id
+* Using the  [localhost:8080/vicedean/delete/{id}](localhost:8080/vicedean/delete/{id}) , you can delete a vice dean by id
+* Using the  [localhost:8080/vicedean/getViceDeanById/{id}](localhost:8080/vicedean/getViceDeanById/{id}) , you can get a vice dean by id
+* Using the  [localhost:8080/vicedean/getAll}](localhost:8080/vicedean/delete/{studentInfoId}) , you can get all vice dean by list
+* Using the  [localhost:8080/vicedean/search?page=0&size=10&sort="date"&type="desc"](localhost:8080/vicedean/search?page=0&size=10&sort="date"&type="desc") , you can get all vicedean infos by page.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
+## Term and Final Grades Process 
+### Using the Communication Message Service,
+Necessary codings were made for calculating the fall and spring semesters and the grade point average of that semester.  
+* Students must choose a separate course for each semester.
+* At least 3 compulsory courses must be selected.
+* The total credit score of the selected courses must be more than 30 points for one semester.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+When calculating the end-of-ETerm average, 60% of the compulsory courses are multiplied by their own credit score, and 40% of the elective courses are multiplied by their own credit score and divided by the total credit score.

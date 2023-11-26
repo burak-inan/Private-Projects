@@ -1,4 +1,10 @@
 # RWU Online Library
+
+**Author:**  
+_Burak Inan_   
+_burakinan.dev@gmail.com_
+---
+## Description
 - The Library Management System is a Vite-ReactJs application. 
 - It has responsible, beatifull design
 - It provides a single page website thanks to react-router-dom for managing books, movies, members, and borrowing transactions in a library. 
