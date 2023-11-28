@@ -141,26 +141,26 @@ These technologies and libraries collectively contribute to the development of a
 ## Screenshots:
 
 ### Home Page
-![home-page-slider](home-page-slider.png)
-![offcanvas](offcanvas.png)
-![footer](footer.png)
+![home-page-slider](./images/home-page-slider.png)
+![offcanvas](./images/offcanvas.png)
+![footer](./images/footer.png)
 
 ### Courses Page
-![courses-page](courses-page.png)
+![courses-page](./images/courses-page.png)
 
 ### Events Page
-![events-page](events-page.png)
+![events-page](./images/events-page.png)
 
 ### About Page
-![about-page](about-page.png)
+![about-page](./images/about-page.png)
 
 ### Contact Page
-![contact-page](contact-page.png)
+![contact-page](./images/contact-page.png)
 
 ### Dashboard Page
-![dashboard-page](dashboard-page.png)
-![dashboard-some-pages](dashboard-some-pages-1.png)
-![dashboard-some-pages](dashboard-some-pages-2.png)
+![dashboard-page](./images/dashboard-page.png)
+![dashboard-some-pages](./images/dashboard-some-pages-1.png)
+![dashboard-some-pages](./images/dashboard-some-pages-2.png)
 
 ---
 
