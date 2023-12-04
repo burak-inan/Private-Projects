@@ -1,5 +1,4 @@
 # Student Management System Frontend 
-# - IT PRO CAMPUS -
 
 **Author:**  
 _Burak Inan_   
@@ -141,9 +140,12 @@ These technologies and libraries collectively contribute to the development of a
 ## Screenshots:
 
 ### Home Page
-![home-page-slider](./images/home-page-slider.png)
-![offcanvas](./images/offcanvas.png)
-![footer](./images/footer.png)
+![home-page-banner](./images/home-page-banner.png)
+![offcanvas](./images/home-page-offcanvas.png)
+![home-page-services-section](./images/home-page-services-section.png)
+![home-page-teacher-section](./images/home-page-teacher-section.png)
+![home-page-about-section](./images/home-page-about-section.png)
+![footer](./images/home-page-footer.png)
 
 ### Courses Page
 ![courses-page](./images/courses-page.png)
@@ -151,16 +153,20 @@ These technologies and libraries collectively contribute to the development of a
 ### Events Page
 ![events-page](./images/events-page.png)
 
-### About Page
-![about-page](./images/about-page.png)
+### Blog Page
+![blog-page](./images/blog-page.png)
 
 ### Contact Page
 ![contact-page](./images/contact-page.png)
 
-### Dashboard Page
-![dashboard-page](./images/dashboard-page.png)
-![dashboard-some-pages](./images/dashboard-some-pages-1.png)
-![dashboard-some-pages](./images/dashboard-some-pages-2.png)
+### Contact Page
+![registeration-page](./images/registeration-page.png)
+
+### Dashboard Pages
+![dashboard-admin-page](./images/dashboard-admin-page.png)
+![dashboard-choose-lesson-page](./images/dashboard-choose-lesson-page.png)
+![dashboard-student-page](./images/dashboard-student-page.png)
+![dashboard-teacher-page](./images/dashboard-teacher-page.png)
 
 ---
 
