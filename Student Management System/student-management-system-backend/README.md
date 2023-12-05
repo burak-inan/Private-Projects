@@ -175,3 +175,6 @@ Necessary codings were made for calculating the fall and spring semesters and th
 * The total credit score of the selected courses must be more than 30 points for one semester.
 
 When calculating the end-of-ETerm average, 60% of the compulsory courses are multiplied by their own credit score, and 40% of the elective courses are multiplied by their own credit score and divided by the total credit score.
+
+## Live Demo
+[Go to live demo](https://managementonschools.com/app/swagger-ui.html) :arrow_upper_right:

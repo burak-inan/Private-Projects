@@ -168,6 +168,10 @@ These technologies and libraries collectively contribute to the development of a
 ![dashboard-student-page](./images/dashboard-student-page.png)
 ![dashboard-teacher-page](./images/dashboard-teacher-page.png)
 
+
+## Live Demo
+[Go to live demo](https://managementonschools.com/) :arrow_upper_right:
+
 ---
 
 Feel free to customize the template based on your project's specific details and structure.
