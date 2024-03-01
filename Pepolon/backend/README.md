@@ -87,4 +87,4 @@ You can perform
 * Calculate the count of subscribers
 
 ## Live
-[Go to website](https://pepolon.com){:target="_blank"} :arrow_upper_right:
+<a href="https://pepolon.com/" target="_blank">Go to website</a> :arrow_upper_right:
