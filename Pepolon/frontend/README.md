@@ -133,4 +133,4 @@ These technologies and libraries collectively contribute to the development of a
 ![terms-and-conditions-page](./images/terms-and-conditions/terms-and-conditions-page.png)
 
 ## Live
-[Go to website](https://pepolon.com/) :arrow_upper_right:
+[Go to website](https://pepolon.com/){:target="_blank"} :arrow_upper_right:
